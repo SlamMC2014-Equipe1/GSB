@@ -1,6 +1,6 @@
-﻿<div id="contenu">
+﻿<div id="td-div">
     <form method="POST" action="index.php?uc=connexion&action=valideConnexion">
-        <div class="corpsForm">
+        <div class="form-connection">
             <h2>Identification utilisateur</h2>
             
             <label for="nom">Login*</label>

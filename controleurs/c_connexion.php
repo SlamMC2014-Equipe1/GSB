@@ -9,15 +9,16 @@ switch($action){
 		break;
 	}
 	case 'valideConnexion':{
-		$login = $_REQUEST['login'];
-		$mdp = $_REQUEST['mdp'];
+		$login = isset($_REQUEST['login']) ? $_REQUEST['login'] : '';
+		$mdp = isset($_REQUEST['mdp']) ? $_REQUEST['mdp'] : '';
+                
 		$visiteur = $pdo->getInfosVisiteur($login,$mdp);
 		if(!is_array( $visiteur)) {
 			ajouterErreur("Login ou mot de passe incorrect");
 			include("vues/v_erreurs.php");
 			include("vues/v_connexion.php");
 		}
-		else{
+		else {
                     $matricule = $visiteur['VIS_MATRICULE'];
                     $role = $visiteur['TRA_ROLE'];
                     $nom =  $visiteur['VIS_NOM'];
@@ -32,12 +33,12 @@ switch($action){
                         $user->setPrenom($prenom);
                         
                     // Permet de transporter l'objet User en Session    
-                    $_SESSION['user']= serialize($user);
+                    $_SESSION['user'] = serialize($user);
                     
                     //$_SESSION['vis_matricule']= $id;
                     //$_SESSION['nom']= $nom;
                     //$_SESSION['prenom']= $prenom;
-                    include("vues/v_sommaire.php");
+                    header('Location : index.php');
 		}
 		break;
 	}
@@ -48,7 +49,7 @@ switch($action){
             break;
         
 	default :
-		include("vues/v_connexion.php");
-		break;
+            include("vues/v_connexion.php");
+            break;
 }
 ?>

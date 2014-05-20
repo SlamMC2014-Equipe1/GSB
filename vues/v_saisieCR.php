@@ -1,4 +1,4 @@
-<div id="contenu">
+<div id="content">
     <h1>Rapport de visite</h1>
     <form method="POST" action="index.php?uc=gererCR&action=insertCR" name="formSaisieCR">
         <div class="corpsForm">

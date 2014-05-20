@@ -1,313 +1,303 @@
-/* Styles des divisions principales de la page */
-body{
-  background-color: #77AADD;
-	background-image: url(imgs/FONDGLOBAL.jpg);
-	background-repeat: repeat-x;
-  margin:0% 0%;
-  padding : 0.6em;
-  font-family:"Trebuchet MS",Verdana,Geneva,Arial,Helvetica,sans-serif;
-  font-size:0.8em;
-}
-#page {
-  background-color:white;
-  width : 65%;
-  margin : auto ;
-  border : 0.2em solid black;
-  padding : 0.1em;
-}
-#entete{
-  background-color:rgb(72,198,236);
-	color : #980101;
-	border: solid 0.1em #980101;
-	height: 154px;
-	padding: 0em;
-	border-collapse: separate;
-}
-#pied{
-  clear : both;
-	border : solid 0.2em #980101;
-	margin-left : 18%;
-	margin-top : 1em;
-	padding:0.4em;
-	padding: 0.2em;
-	border-collapse: separate;
-}
-#menuGauche {
-	margin-top : 0.8em;
-	padding: 1em;
-	background-color: white;
-	color: rgb(0,85,227);
-	float: left;
-	width: 14%;
-}
-
-#contenu{
-	border: none;
-	padding: 1.3em;
-	background-color: white;
-	border-left :  groove 0.8em #980101;
-  margin-top : 1.2em;
-	margin-left: 18%;
-/* permet de fixer une hauteur mini sur les navigateurs modernes */
-  min-height:27em;
-/* pour obtenir le m�me effet sur IE, sachant que si le contenu d�passe, il
-"poussera" la hauteur en ne respectant pas la norme. On se joue de ses lacunes
+﻿/* 
+    Document   : style.css
+    Created on : 31 janv. 2014, 13:25:09
+    Author     : Christophe
+    Description:
+        Purpose of the stylesheet follows.
 */
-  height:27em;
+
+root { 
+    display: block;
+    padding: 0;
 }
 
-/* pour r�tablir le mauvais effet sur les nav. modernes */
-html>body #contenu{
-  height:auto;
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    margin: 0;
+    
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
-/* style � appliquer � la balise ul d'identifiant menulist */
-ul#menuList{
-    list-style:none;
-    margin:0px;
-    padding:0px;
-    width:98%;
-    font-size: 1em;
+.header-bar {
 }
 
-/* style � appliquer aux �l�ments de la balise ul d'identifiant menulist */
-ul#menuList li {
-    position:relative;
-    margin:0px;
-    padding:0px;
+/* Module GSB Header Bar : ghb*/
+
+/*.ghb {
+    height: 70px;
+    width: 100%;
+    background-color: #3399cc;
+    
+    color: white;
+    text-transform: uppercase;
+    
+    font-family: Verdana, Arial, sans-serif;
+    fint-size: 10pt;
 }
 
-/* apparences des liens dans listes et sous-listes non num�rot�es */
-ul#menuList a {
-    color:rgb(0,85,227);
-    display:block;
-    text-decoration:none;
-    width:100%;
+.ghb a {
+    color: white;
+    text-decoration: none;
 }
-ul#menuList a:hover {
-    background: rgb(0,85,227);
+
+.ghb-logo-container {
+    float: left;
+    position: relative;
+    padding-top: 15px;
+}
+
+.ghb-nav-container {
+    float: right;
+    padding-top: 23px;
+}*/
+
+/**
+** Header Bar
+*/
+#header {
+    height: 70px;
+    width: 100%;
+    /*background-color: #3399cc;*/
+    /*background-color : #183959;*/
+    background-color : #235281;
+    
+    color: white;
+    font-size: 10pt;
+}
+
+#menu {
+    float: right;
+    position: relative;
+}
+
+#user-header {
+    display: block;
+    float: right;
+    margin-right: 20px;
+    background-color : #183959;
+    border-left: 1px solid #435f7b;
+    border-right: 1px solid #435f7b;
+    height: 70px;
+}
+
+#user-header-avatar {
+    float: right;
+    border: 1px solid #424143;
+    height: 50px;
+    width: 50px;
+    margin: 9px 9px 0px 15px;
+}
+
+#user-header-names {
+    float: right;
+    color: white;
+    margin: 27px 0 0 15px;
+}
+
+#logo {
+    display : block;
+    width: 186px;
+    border-right: 1px solid #435f7b;
+    height: 36px;
+    float: left;
+    overflow: hidden;
+    padding: 17px;
+}
+
+.link {
+}
+
+.link:hover {
+    background-color: #183959;
+}
+
+/**
+** Corps
+*/
+
+#main {
+    height: 100%;
+    margin: 0;
+}
+
+#main-content {
+    height: 100%;
+    width: 100%;
+    overflow-x: visible;
+    display: block;
+}
+
+#content-table, #content-tr {
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table-div {
+    display: table;
+}
+
+.tr-div {
+    display: table-row;
+}
+
+.td-div {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#content {
+    padding: 20px;
+}
+
+/** ###################### **
+*** ######## Menu ######## **
+*** ###################### **/
+
+#left-menu {
+    width: 220px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    border-right: 1px solid rgba(155,155,155,0.3);
+    /*background-image: url('../images/main-content-left-menu-shadow.png');
+    background-position: right;
+    background-repeat: repeat-y;*/
+    font-size: 10pt;
+}
+
+.left-menu-img {
+    background-image: url('../images/icons/sprite-left-menu.png');
+    width: 18px;
+    height: 18px;
+    float: left;
+    position: relative;
+    margin-right: 12px;
+}
+
+.left-menu-item {
+    display: block;
+    border-bottom: 1px solid #dadada;
+    padding: 14px;
+    color : #235281;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.left-menu-item:hover {
+    background-color: #e14f1c;
     color: white;
 }
 
-#entete #logoGSB {
-  float : left;
-  width : 238px;
-  height : 152px;
+a {
+    color: white;
 }
 
-#entete h1 {
-  margin : 1em;
-  margin-left:6em;
-  font-size : x-large;
-  text-align:center;
+/** ###################### **
+*** ###### Connexion ##### **
+*** ###################### **/
+
+.form-connection {
+    width: 600px;
+    margin: auto;
 }
 
-#contenu pre {
-  width:95%;
-  overflow : scroll;
-}
-#contenu h2 {
-  font-size : large;
-  text-align:left;
-  margin:0;
-  margin-bottom:0.5em;
+/** ###################### **
+*** ###### Accordéon ##### **
+*** ###################### **/
+
+.ac-container {
+    width: 100%;
+    /*margin: 10px auto 30px auto;*/
+    text-align: left;
 }
 
-.logoValidW3c {
-  display: inline;
-}
-#libValidW3c{
-  display : inline;
-  vertical-align:middle;
-}
-
-/* Style des formulaires */
-.corpsForm {
-  border : solid 0.1em #000;
-  border-bottom-width:1px;
-  margin-bottom : 0em;
-  width : 95%;
-  
-  padding : 5px;
-}
-.piedForm {
-  border-bottom-width : 0.1em;
-  border-left-width : 0.1em;
-  border-right-width : 0.1em;
-  border-top-width : 0em;
-  border-style : solid;
-  border-color : #000;
-  text-align:right ;
-  width : 95%;
-  margin-top:0em;
-}
-form {
-  margin-bottom:1em;  
-}
-.corpsForm legend {
-  font-weight:bold;
-  font-size:1.2em;
-}
-.corpsForm label{
-  float: left;
-  text-align:right;
-  width:33%;
-	margin: 0;
-	padding: 0 .5em 0 0;
-	line-height: 1.8;	
-}
-input, button, textarea, select{
-  font-family:"Trebuchet MS", sans-serif;
-  font-size : 1em;
-}
-button{
-  width : 60px;
-  height : 30px;
-  text-align:center;
-  vertical-align:middle;
-}
-input:hover, textarea:hover, select:hover{
-  background-color : #FAFAE6;
-  cursor : pointer;
+.ac-container label {
+    /*font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;*/
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    height: 30px;
+    cursor: pointer;
+    color: #777;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+    line-height: 33px;
+    font-size: 15px;
+    background: #ffffff;
+    box-shadow: 
+            0px 0px 0px 1px rgba(155,155,155,0.3), 
+            1px 0px 0px 0px rgba(255,255,255,0.9) inset;
 }
 
-/*  Le texte des messages d'erreur est de couleur rose sur fond ocre et de 
-taille de caract�res l�g�rement sup�rieure � la normale */
-.erreur{ 
-   background-color:rgb(237,210,229);
-   color:rgb(203,28,128);
-   font-size:1.1em;
-   width:95%;
-}
-.centre {
-  text-align:center;
+.ac-container label:hover {
+    background: #fff;
 }
 
-.info {
-   background-color:rgb(178,207,81);
-   color : white;
-   font-size:1.1em;
-   width : 95%  
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    /**background: #c6e1ec;**/
+    color: #3d7489;
+    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+    box-shadow: 
+            0px 0px 0px 1px rgba(155,155,155,0.3), 
+            0px 2px 2px rgba(0,0,0,0.1);
 }
-
-.encadre {
-  border : solid 0.1em #000;
-  width : 95%;
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+    background: transparent url(../images/arrow-down.png) no-repeat center center;	
 }
-/* Style pour les liens de la page principale */
-#contenu .corpsTexte {
-  width:80%;
-  font-size:1.2em;
+.ac-container input:checked + label:hover:after{
+    background-image: url(../images/arrow-up.png);
 }
-
-/* Style pour les liens de la page principale */
-#contenu a {
-   font-size : 1.1em;
-   color:gray;
-   text-decoration:none;
+.ac-container input{
+    display: none;
 }
-#contenu a:hover {
-   text-decoration:underline;
-   background-color : #D9BB7A;
-   font-size : 1em;
+.ac-container article{
+    background: rgba(255, 255, 255, 0.5);
+    /**background: #235281;**/
+    margin-top: -1px;
+    overflow: hidden;
+    height: 0px;
+    position: relative;
+    z-index: 10;
+    -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
-
-/* Style pour les parties importantes de la page principale */
-#contenu strong {
-  font-weight:bold;
+.ac-container article p{
+    font-style: italic;
+    color: #777;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 20px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
 }
-
-/* Styles pour les tableaux de la page principale */
-#contenu table {
-   background-color:#FFF;
-   border : 0.1em solid #777777;
-   color:black;
-   margin-right : auto ;
-   margin-left:0.3em;
-   border-collapse : collapse;
+.ac-container input:checked ~ article{
+    -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
 }
-
-/* Style pour les lignes d'en-t�te des tableaux */
-#contenu th {  
-   background-color:#77AADD;
-   height:21px;
-   text-align:left;
-   vertical-align:top;
-   font-weight:bold;
-   border-bottom:0.1em solid #777777;
-   font-size:1.1em;
-} 
-
-#contenu td {
-    /* CHT : 10/12/2013 */ padding : 3px;
-   border :1px solid #777777;
+.ac-container input:checked ~ article.ac-small{
+    height: auto;
 }
-
-#contenu h3 {
-    font-size : 1.2em;
+.ac-container input:checked ~ article.ac-medium{
+    height: 180px;
 }
-table.listeLegere {
-/*    width:80%;*/
-    margin-bottom : 0.5em;
-}
-
-/* Tableaux quadrill�s utilis�s pour l'affichage de listes avec contenu l�ger*/ 
-table.listeLegere th, table.listeLegere td {
-  border : dotted rgb(178,207,81) 0.1em;
-  padding:0.5em;
-  vertical-align : top;
-  text-align : left;
-}
-
-table.listeLegere caption {
-  font-size : 1.1em;
-  text-align : left;
-  margin-bottom : 0.3em;
-}
-table.listeLegere td {
-  vertical-align:top;
-  font-weight:normal;
-}
-table.listeLegere th.eltForfait{
-  color:black;
-}
-table.listeLegere th.date, table.listeLegere th.montant{
-  width:15%;
-  color:black;
-}
-table.listeLegere th.libelle{
-  width:70%;
-  color:black;
-}
-
-#contenu h2 {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-	color: #1D2941;
-	text-decoration: none;
-	border : 1px solid #6988BE;
-	padding-left: 25px;
-	background-color: #E9F1FE;
-  height : 28px;
-}
-
-#contenu img {
-  /* CHT 17/12/2013 */  
-  /*height : 28px;*/
-}
-
-/* Barre de progression notoriété*/
-.stat_notoriete {
-    display : inline-block;
-    height : 15px;
-    background-color : #999;
-    border : solid black 1px;
-    width : 180px;
-}
-
-.stat_notoriete .remplissage {
-    display : inline-block;
-    background-color : #777;
-    height : 15px;
+.ac-container input:checked ~ article.ac-large{
+    height: 230px;
 }
