@@ -1,4 +1,4 @@
-﻿/* 
+/* 
     Document   : style.css
     Created on : 31 janv. 2014, 13:25:09
     Author     : Christophe
@@ -14,44 +14,23 @@ root {
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #f5f5f5;
+    background-color: #fff;
     margin: 0;
     
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    color: #235281;
+    margin-top: 5px;
+}
+
+h2 {
+    color: #3d7489;
+}
+
 .header-bar {
 }
-
-/* Module GSB Header Bar : ghb*/
-
-/*.ghb {
-    height: 70px;
-    width: 100%;
-    background-color: #3399cc;
-    
-    color: white;
-    text-transform: uppercase;
-    
-    font-family: Verdana, Arial, sans-serif;
-    fint-size: 10pt;
-}
-
-.ghb a {
-    color: white;
-    text-decoration: none;
-}
-
-.ghb-logo-container {
-    float: left;
-    position: relative;
-    padding-top: 15px;
-}
-
-.ghb-nav-container {
-    float: right;
-    padding-top: 23px;
-}*/
 
 /**
 ** Header Bar
@@ -135,6 +114,14 @@ html, body {
     table-layout: fixed;
 }
 
+#content {
+    padding: 20px;
+}
+
+/** ###################### **
+*** ######## Tableau ##### **
+*** ###################### **/
+
 .table-div {
     display: table;
 }
@@ -148,8 +135,73 @@ html, body {
     vertical-align: top;
 }
 
-#content {
-    padding: 20px;
+.table {
+    border-collapse: collapse;
+}
+
+/** Tableau pour formulaires **/
+
+.form-table {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-cell-25 {
+    width: 25%;
+}
+
+.form-table-label {
+    width: 25%;
+}
+
+.form-table tr {
+    height: 40px;
+}
+
+.form-table td {
+    padding: 3px;
+    padding-left: 20px;
+}
+
+.table-line-grey {
+    background: #f5f5f5;
+}
+
+.table-title-cadre {
+    display: block;
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #3d7489;
+    color: white;
+    font-weight: bold;
+    
+    margin-top: 10px;
+}
+
+/** Header bar du contenu **/
+.title-bar {
+    width: 100%;
+    height: 50px;
+    background: white;
+    
+    margin: 0px;
+    margin-top: -3px;
+    line-height: 50px;
+    
+    text-align: center;
+}
+
+.title-bar-orange {
+    background-color: #E1765A;
+    color: white;
+}
+
+.title-bar-orange h1 {
+    color: white;
+    margin: 0;
+    margin-top: 3px;
 }
 
 /** ###################### **
@@ -161,7 +213,7 @@ html, body {
     height: 100%;
     position: relative;
     z-index: 1;
-    background-color: #fff;
+    background-color: #f5f5f5;
     border-right: 1px solid rgba(155,155,155,0.3);
     /*background-image: url('../images/main-content-left-menu-shadow.png');
     background-position: right;
@@ -183,12 +235,13 @@ html, body {
     border-bottom: 1px solid #dadada;
     padding: 14px;
     color : #235281;
+    background-color: #fff;
     text-decoration: none;
     overflow: hidden;
 }
 
 .left-menu-item:hover {
-    background-color: #e14f1c;
+    background-color: #E1765A;
     color: white;
 }
 
@@ -205,6 +258,66 @@ a {
     margin: auto;
 }
 
+/** ###################### **
+*** ###### Formulaire #### **
+*** ###################### **/
+.form {
+    
+}
+
+.form label {
+    display: inline-block;
+    width: 150px;
+    
+    font-size: 15px;
+    
+    color: #777;
+}
+
+.form input {
+    height: 20px;
+    color: #777;
+    padding-left: 5px;
+}
+
+.btn {
+    border: medium none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none repeat scroll 0% 0% transparent;
+    cursor: pointer;
+    padding: 4px 15px;
+    display: inline-block;
+    margin: 2px 5px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: medium none;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-2 {
+    background: none repeat scroll 0% 0% #3d7489;
+    color: white;
+    box-shadow: 0px 6px #235281;
+    transition: none 0s ease 0s;
+}
+
+.btn-2a {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.btn-2a:hover {
+    box-shadow: 0px 3px #3d7489;
+    top: 2px;
+}
+
+.form input[type='button'],
+.form input[type='submit']{
+    padding: 0;
+    color: white;
+}
 /** ###################### **
 *** ###### Accordéon ##### **
 *** ###################### **/
@@ -227,7 +340,7 @@ a {
     text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
     line-height: 33px;
     font-size: 15px;
-    background: #ffffff;
+    background: #f5f5f5;
     box-shadow: 
             0px 0px 0px 1px rgba(155,155,155,0.3), 
             1px 0px 0px 0px rgba(255,255,255,0.9) inset;

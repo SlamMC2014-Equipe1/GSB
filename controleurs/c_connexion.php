@@ -1,6 +1,10 @@
 ﻿<?php
 if(!isset($_REQUEST['action'])){
+    if(!isset($user)) {
 	$_REQUEST['action'] = 'demandeConnexion';
+    } else {
+        header('Location: index.php');
+    }
 }
 $action = $_REQUEST['action'];
 switch($action){
@@ -38,7 +42,7 @@ switch($action){
                     //$_SESSION['vis_matricule']= $id;
                     //$_SESSION['nom']= $nom;
                     //$_SESSION['prenom']= $prenom;
-                    header('Location : index.php');
+                    header('Location: index.php?uc=accueil');
 		}
 		break;
 	}
