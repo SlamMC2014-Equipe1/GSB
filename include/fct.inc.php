@@ -122,7 +122,7 @@ function verifInsertCR($praticien, $dateVisite, $bilan, $motif, $produit1, $prod
     // Champ dateVisite
     if (!empty($dateVisite) && ($dateVisite !== null)) {
         if (!preg_match('#[0-9]{4}-[0-9]{2}-[0-9]{2}#', $dateVisite)) {
-            ajouterErreur('La <strong>date de visite</strong> n\'a pas un format AAAA/MM/JJ');
+            ajouterErreur('La <strong>date de visite</strong> n\'a pas un format AAAA-MM-JJ');
         }
     } else {
         ajouterErreur('La <strong>date de visite</strong> n\'est pas renseignée');

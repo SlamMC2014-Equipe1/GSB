@@ -1,14 +1,15 @@
-<div id="contenu">
-    <h1>Statistiques sur les Produits Présentés</h1>
-    <br/>
-    
+<div class="title-bar title-bar-orange">
+    <h1>Statistiques : Produits Présentés</h1>
+</div>
+
+<div id="content">
     <h2>Graphe</h2><br/>
     <center><img src="images/graphs/statsProduits.png" alt="Graphique statistique"/></center>
     <br/>
     
-    <h2>Données</h2>
+    <span class="table-title-cadre">Données</span>
     
-    <table style="margin: auto">
+    <table class="table table-100">
         <thead>
             <tr>
                 <th>Dépot légal</th>
@@ -18,8 +19,17 @@
             </tr>
         </thead>
         <tbody>
-    <?php foreach($statsProduits as $unProduit) { ?>
-            <tr>
+    <?php 
+        $c = 1;
+        $class = '';
+        foreach($statsProduits as $unProduit) {
+            if ($c % 2 == 0)
+                $class = 'table-line-grey';
+            else
+                $class = 'table-line';
+            $c++;
+    ?>
+            <tr class="<?php echo $class; ?>">
                 <td><?php echo $unProduit['MED_DEPOTLEGAL']; ?></td>
                 <td><?php echo $unProduit['MED_NOMCOMMERCIAL']; ?></td>
                 <td><?php echo $unProduit['NB_MED']; ?></td>

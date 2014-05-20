@@ -139,6 +139,11 @@ h2 {
     border-collapse: collapse;
 }
 
+.table-100 {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 /** Tableau pour formulaires **/
 
 .form-table {

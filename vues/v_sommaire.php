@@ -12,12 +12,20 @@
                 </a>
             </article>
         </div>
+        <?php if ($user->getRole() == User::$DELEGUE)
+        {
+        ?>
         <div>
             <input id="ac-2" name="accordion-2" type="checkbox" />
-            <label for="ac-2">About us</label>
+            <label for="ac-2">Statistiques</label>
             <article class="ac-small">
-                <p>Some content...</p>
+                <a href="index.php?uc=delegueRegional&action=statsProduits" title="Créer un compte rendus" class="left-menu-item">
+                    <span class="left-menu-text">Produits</span>
+                </a>
             </article>
         </div>
+        <?php
+        }
+        ?>
     </div>
 </div>

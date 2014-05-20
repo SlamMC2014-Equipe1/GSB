@@ -14,7 +14,7 @@
                 <tbody>
                     <tr class="table-line table-line-grey">
                         <td class="form-table form-table-label"><label for="dateVisite">Date visite</label></td>
-                        <td><input type="date" name="dateVisite" size="35"/></td>
+                        <td><input type="date" name="dateVisite" size="35" placeholder="AAAA-MM-JJ"/></td>
                     </tr>
                     <tr class="table-line">
                         <td class="form-table form-table-label"><label for="praticien">Praticien</label></td>

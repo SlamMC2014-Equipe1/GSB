@@ -37,7 +37,7 @@ switch ($action) {
         if (nbErreurs() == 0) {
             $resultInsert = $pdo->insertRapportVisite($idVisiteur, $praticien, $dateVisite, $bilan, $motif, $remplacant, $lesMedicaments, $doc);
             echo "Tout s'est bien passé";
-            include("vues/v_accueil.php");
+            header('Location: index.php');
         } else {
             $lesPraticiens = $pdo->getLesPraticiens();
             $lesMedicaments = $pdo->getLesMedicaments();
