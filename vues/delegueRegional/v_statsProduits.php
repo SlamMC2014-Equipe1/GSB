@@ -3,19 +3,72 @@
 </div>
 
 <div id="content">
-    <h2>Graphe</h2><br/>
-    <center><img src="images/graphs/statsProduits.png" alt="Graphique statistique"/></center>
-    <br/>
+    <div id="graphique" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
     
+    <!-- Génération du graphe -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/highcharts/highcharts.js"></script>
+    <script src="js/highcharts/modules/exporting.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#graphique').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Statistiques des produits présentés'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    <?php 
+                    // Variables qui permettent de ne pas mettre la virgule sur la dernière itération
+                    $c = 1;
+                    $count = count($statsProduits);
+                    
+                    // Données du graphe, formatté comme suit : ['NomObjet', pourcentage], ...
+                    foreach($statsProduits as $unProduit) { 
+                        echo '[\'' . $unProduit['MED_NOMCOMMERCIAL'] . '\', ' . round(($unProduit['NB_MED']/$nbProduitsTot)*100). ']';
+                        if ($c != $count)
+                            echo ',';
+                        $c++;
+                    } 
+                    ?>
+                ]
+            }]
+        });
+    });
+    </script>
+    
+    <!-- Affichage des données en brut -->
     <span class="table-title-cadre">Données</span>
     
     <table class="table table-100">
         <thead>
             <tr>
                 <th>Dépot légal</th>
-                <th>Nom Com.</th>
+                <th>Nom Commercial</th>
                 <th>Nombre</th>
-                <th>%</th>
+                <th>Pourcentage (%)</th>
             </tr>
         </thead>
         <tbody>

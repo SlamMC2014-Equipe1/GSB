@@ -18,6 +18,7 @@ html, body {
     margin: 0;
     
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666;
 }
 
 h1 {
@@ -121,6 +122,22 @@ h2 {
 /** ###################### **
 *** ######## Tableau ##### **
 *** ###################### **/
+
+th {
+    padding: 5px;
+    text-align: left;
+    background-color: #E1765A;
+    color: white;
+}
+
+tr:hover {
+    background-color: #c7fabc;
+    background-color: #daebfe;
+}
+
+td {
+    padding: 3px;
+}
 
 .table-div {
     display: table;

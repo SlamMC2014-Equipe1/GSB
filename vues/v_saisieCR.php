@@ -14,7 +14,7 @@
                 <tbody>
                     <tr class="table-line table-line-grey">
                         <td class="form-table form-table-label"><label for="dateVisite">Date visite</label></td>
-                        <td><input type="date" name="dateVisite" size="35" placeholder="AAAA-MM-JJ"/></td>
+                        <td><input type="text" id="dateVisite" name="dateVisite" size="35" placeholder="AAAA-MM-JJ"/></td>
                     </tr>
                     <tr class="table-line">
                         <td class="form-table form-table-label"><label for="praticien">Praticien</label></td>
@@ -103,7 +103,8 @@
             </table>
             
             <center><input class="btn btn-2 btn-2a" type="submit" value="Envoyer" /></center>
-            <script src="js/jquery.js"></script>
+            
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script>
                 $(function() {
                     // Gestion des boutons + et - pour les échantillons
@@ -126,7 +127,8 @@
                         } else {
                             valChamp = parseInt(valChamp);
                         }
-                        $("#echantProduit1").val(valChamp-1);
+                        if (valChamp - 1 >= 0)
+                            $("#echantProduit1").val(valChamp-1);
                     });
                     
                     $("#ajoutEchant2").click(function() {
@@ -148,7 +150,9 @@
                         } else {
                             valChamp = parseInt(valChamp);
                         }
-                        $("#echantProduit2").val(valChamp-1);
+                        
+                        if (valChamp - 1 >= 0)
+                            $("#echantProduit2").val(valChamp-1);
                     });
                 });
             </script>
