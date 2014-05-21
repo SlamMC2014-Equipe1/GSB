@@ -1,3 +1,4 @@
+<div class="td-div">
 <div class="title-bar title-bar-orange">
     <h1>Comptes Rendus</h1>
 </div>
@@ -158,4 +159,5 @@
             </script>
         </div>
     </form>
+</div>
 </div>

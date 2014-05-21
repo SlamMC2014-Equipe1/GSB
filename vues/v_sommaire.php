@@ -12,6 +12,15 @@
                 </a>
             </article>
         </div>
+        <div>
+            <input id="ac-medic" name="accordion-medic" type="checkbox" />
+            <label for="ac-medic">Médicaments</label>
+            <article class="ac-small">
+                <a href="index.php?uc=medicament" title="Consulter la liste des médicaments" class="left-menu-item">
+                    <span class="left-menu-text">Consulter</span>
+                </a>
+            </article>
+        </div>
         <?php if ($user->getRole() == User::$DELEGUE)
         {
         ?>

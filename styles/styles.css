@@ -126,8 +126,6 @@ h2 {
 th {
     padding: 5px;
     text-align: left;
-    background-color: #E1765A;
-    color: white;
 }
 
 tr:hover {
@@ -232,14 +230,12 @@ td {
 
 #left-menu {
     width: 220px;
-    height: 100%;
+    
     position: relative;
     z-index: 1;
+    box-sizing: content-box;
     background-color: #f5f5f5;
     border-right: 1px solid rgba(155,155,155,0.3);
-    /*background-image: url('../images/main-content-left-menu-shadow.png');
-    background-position: right;
-    background-repeat: repeat-y;*/
     font-size: 10pt;
 }
 
