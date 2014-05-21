@@ -15,7 +15,7 @@
                         <img id="user-header-avatar" src="images/avatars/default.jpg" />
                         <div id="user-header-names">
                             <span id="user-header-names-span">
-                                Christophe Torre
+                                <?php echo $user->getPrenom() . ' ' . $user->getNom(); ?>
                             </span>
                             <img src="images/user-header-arrow.png" />
                         </div>
