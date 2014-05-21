@@ -22,13 +22,8 @@
             </tr>
         </thead>
         <tbody> 
-            <?php   
-                $c = 1;
-                $class = '';
-                foreach ($lesMedicaments as $unMedicament) {
-                    $class = $c % 2 == 0 ? 'table-line-grey' : 'table-line';
-                    $c++;
-                    
+            <?php
+                foreach ($lesMedicaments as $unMedicament) {   
                     $depotLegal = $unMedicament['MED_DEPOTLEGAL'];
                     $nomCommercial = $unMedicament['MED_NOMCOMMERCIAL'];
                     $codeFamille= $unMedicament['FAM_CODE'];

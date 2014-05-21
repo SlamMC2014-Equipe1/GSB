@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 if(!isset($_REQUEST['action'])){
     if(!isset($user)) {
 	$_REQUEST['action'] = 'demandeConnexion';

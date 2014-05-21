@@ -21,6 +21,15 @@
                 </a>
             </article>
         </div>
+        <div>
+            <input id="ac-praticiens" name="accordion-praticiens" type="checkbox" />
+            <label for="ac-praticiens">Praticiens</label>
+            <article class="ac-small">
+                <a href="index.php?uc=praticien" title="Consulter la liste des praticiens" class="left-menu-item">
+                    <span class="left-menu-text">Consulter</span>
+                </a>
+            </article>
+        </div>
         <?php if ($user->getRole() == User::$DELEGUE)
         {
         ?>

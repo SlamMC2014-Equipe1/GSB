@@ -8,6 +8,7 @@
     <body>
         <div id="main">
             <!-- Header Bar -->
+            <?php if ($uc != 'connexion') {?>
             <header id="header">
                 <div id="menu">
                     <a id="user-header" href="#">
@@ -24,6 +25,7 @@
                     <img src="./images/logo-gsb.png" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
                 </a>
             </header>
+            <?php } ?>
             
             <!-- Cadre Principal -->
             <div id="main-content">

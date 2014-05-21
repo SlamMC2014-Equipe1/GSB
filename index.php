@@ -6,8 +6,6 @@ require_once("include/fct.inc.php");
 require_once("include/modele.inc.php");
 require_once("class/user.class.php");
 
-include("vues/v_entete.php");
-
 $pdo = PdoGsb::getPdoGsb();
 
 $uc = isset($_REQUEST['uc']) ? $_REQUEST['uc'] : 'accueil';
@@ -19,6 +17,8 @@ else {
     //On rend accessible l'objet User en session
     $user = unserialize($_SESSION['user']);
 }
+
+include("vues/v_entete.php");
 
 switch($uc){
     case 'accueil' :

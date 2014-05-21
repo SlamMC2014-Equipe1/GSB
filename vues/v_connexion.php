@@ -1,19 +1,18 @@
 ﻿<div id="td-div">
-    <form method="POST" action="index.php?uc=connexion&action=valideConnexion">
-        <div class="form-connection">
-            <h2>Identification utilisateur</h2>
-            
-            <label for="nom">Login*</label>
-            <input id="login" type="text" name="login"  size="30" maxlength="45" /><br/>
-
-            <label for="mdp">Mot de passe*</label>
-            <input id="mdp"  type="password"  name="mdp" size="30" maxlength="45" /><br/>
-
-            <center>
-                <input type="submit" value="Valider" name="valider" />
-                <input type="reset" value="Annuler" name="annuler" />
-            </center>
-        </div>
-    </form>
-
+        <form class="form-connection" method="POST" action="index.php?uc=connexion&action=valideConnexion">
+            <h1><span class="log-in">Connexion</span></h1>
+            <p class="float">
+                    <label for="login"><i class="icon-user"></i>Login</label>
+                    <input type="text" name="login" placeholder="Username or email">
+            </p>
+            <p class="float">
+                    <label for="mdp"><i class="icon-lock"></i>Mot de passe</label>
+                    <input type="password" name="mdp" placeholder="Password" class="showpassword">
+            </p>
+            <p class="clearfix">   
+                <center>
+                    <input type="submit" name="submit" value="Connexion">
+                </center>
+            </p>
+        </form>​​
 </div>
