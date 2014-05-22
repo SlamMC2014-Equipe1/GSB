@@ -128,6 +128,7 @@ th {
     text-align: left;
 }
 
+
 tr:hover {
     background-color: #c7fabc;
     background-color: #daebfe;
@@ -551,6 +552,31 @@ a {
     padding: 0;
     color: white;
 }
+
+/** ###################### **
+*** ###### Notoritété #### **
+*** ###################### **/
+
+.stat_notoriete {
+    display : inline-block;
+    height : 18px;
+    background-color : #f1f1f1;
+    border : solid black 1px;
+    width : 180px;
+}
+
+.stat_notoriete .remplissage {
+    float: left;
+    display : block;
+    background-color : #999;
+    height : 18px;
+}
+
+acronym {
+    text-decoration: none;
+    border: none;
+}
+
 /** ###################### **
 *** ###### Accordéon ##### **
 *** ###################### **/
