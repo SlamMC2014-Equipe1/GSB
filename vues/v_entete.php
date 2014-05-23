@@ -25,6 +25,29 @@
                     <img src="./images/logo-gsb.png" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
                 </a>
             </header>
+            <div id="user-menu">
+                <div id="user-menu-description">
+                    <span class="rang">Rang : <?php echo $user->getRole(); ?></span>
+                </div>
+                <div id="user-menu-deconnexion">
+                    <a href="index.php?uc=connexion&action=deconnexion" title="Déconnexion">
+                        <span class="btn-deconnexion">Déconnexion</span>
+                    </a>
+                </div>
+            </div>
+            <script src="js/jquery.js"></script>
+            <script>
+                $(function() {
+                   $('#user-header').click(function() {
+                       var display = $('#user-menu').css('display');
+                       if (display === 'block') {
+                           $('#user-menu').css('display', 'none');
+                       } else {
+                           $('#user-menu').css('display', 'block');
+                       }
+                   });
+                });
+            </script>
             <?php } ?>
             
             <!-- Cadre Principal -->

@@ -7,8 +7,8 @@
                 <a href="index.php?uc=gererCR&action=saisieCR" title="Créer un compte rendus" class="left-menu-item">
                     <span class="left-menu-text">Nouveau</span>
                 </a>
-                <a href="index.php?uc=" class="left-menu-item">
-                    <span class="left-menu-text">Consulter</span>
+                <a href="index.php?uc=gererCR&action=consulterMesCR" class="left-menu-item">
+                    <span class="left-menu-text">Mes comptes rendus</span>
                 </a>
             </article>
         </div>

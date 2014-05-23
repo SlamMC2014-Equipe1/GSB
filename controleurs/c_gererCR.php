@@ -51,5 +51,31 @@ switch ($action) {
         $lesMedicaments = $pdo->getLesMedicaments();
         include('vues/v_saisieCR.php');
         break;
+    
+    case 'consulterMesCR' :
+        $lesComptesRendus = $pdo->getLesComptesRendus($user->getMatricule());
+        include('vues/v_consulterMesCR.php');
+        break;
+    
+    case 'consulterCR' :
+        if (isset($_GET['num'])) {
+            $num = $_GET['num'];
+            $compteRendu = $pdo->getCompteRendu($num);
+            $produitsPresentes = $pdo->getProduitsPresentes($num);
+            
+            if ($compteRendu != null) {
+                if (!is_null($compteRendu['RAP_REMPLACANT']))
+                {
+                    $compteRendu['PRA_NOM'] = 'Remplaçant de ' . $compteRendu['PRA_NOM'];
+                }
+                include('vues/v_consulterCRDetail.php');
+            } else {
+                ajouterErreur('Le contrat n°'.$num.' n\'éxiste pas.');
+                include('vues/v_erreurs.php');
+            }
+        }
+        else
+            header('Location: index.php');
+        break;
 }
 ?>

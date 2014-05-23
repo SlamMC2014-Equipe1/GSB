@@ -24,7 +24,7 @@
                                 <option value="0">Choisir</option>
                                 <?php
                                 foreach($lesPraticiens as $unPraticien) {
-                                    echo '<option value='.$unPraticien['PRA_NUM'].'>'.$unPraticien['PRA_NOM'].' '.$unPraticien['PRA_PRENOM'].' &emsp;&emsp;'.$unPraticien['PRA_COEFNOTORIETE'].'</option>';   
+                                    echo '<option value='.$unPraticien['PRA_NUM'].'>'.$unPraticien['PRA_NOM'].' '.$unPraticien['PRA_PRENOM'].'</option>';   
                                 }
                                 ?> 
                             </select>

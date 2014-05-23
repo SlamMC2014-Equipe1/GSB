@@ -156,7 +156,7 @@ class PdoGsb{
        $rs = PdoGsb::$monPdo->prepare($req);        
        $rs->bindValue(":num", $num, PDO::PARAM_INT);
        $rs->execute();
-       $ligne=$rs->fetchAll(PDO::FETCH_ASSOC);      
+       $ligne=$rs->fetchAll(PDO::FETCH_ASSOC);
        return $ligne;
     }
     
@@ -224,6 +224,84 @@ class PdoGsb{
         
         // On retourne le nombre de lignes affectées
         return $nb;
+    }
+    
+    /*
+     * Retourne un tableau qui contient tous les rapport de visite d'un visiteur en paramètre
+     * 
+     * @param string idVisiteur
+     */
+    public function getLesComptesRendus($idVisiteur) {
+        $req = "SELECT RAP_NUM, RAP_DATE, RAP_MOTIF, PRA_NOM, PRA_PRENOM
+                FROM rapport_visite r, praticien p  
+                WHERE r.PRA_NUM = p.PRA_NUM 
+                AND VIS_MATRICULE = '$idVisiteur'";
+        
+        $rs = PdoGsb::$monPdo->query($req);
+        return $rs->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    /*
+     * Récupère les comptes rendus d'un visiteur avec les informations du praticien
+     * 
+     * @param int numéroRapport
+     */
+    public function getCompteRendu($num) {
+        $req = "SELECT DISTINCT v.VIS_MATRICULE, PRA_NUM, RAP_NUM, RAP_DATE, RAP_BILAN, RAP_MOTIF, RAP_REMPLACANT, RAP_DOC, VIS_NOM, VIS_PRENOM, REG_CODE
+                FROM rapport_visite r, visiteur v, travailler t
+                WHERE r.VIS_MATRICULE = v.VIS_MATRICULE 
+                AND t.VIS_MATRICULE = v.VIS_MATRICULE
+                AND REG_CODE = ( SELECT REG_CODE
+                                FROM travailler
+                                WHERE JJMMAA = (SELECT MAX(JJMMAA)
+                                                FROM travailler
+                                                WHERE VIS_MATRICULE = v.VIS_MATRICULE))
+                AND RAP_NUM = " . $num;
+        
+        $compteRendu = PdoGsb::$monPdo->query($req)->fetch(PDO::FETCH_ASSOC);
+        
+        if (!empty($compteRendu)) {
+            $detailsPraticien = $this->getLesDetails($compteRendu['PRA_NUM']);
+            $detailsPraticien = $detailsPraticien[0];
+            
+            // Fusione les tableaux du compte rendu et des détails du praticien
+            $rs = array_merge($compteRendu, $detailsPraticien);
+        } else {
+            $rs = null;
+        }
+        
+        return $rs;
+    }
+    
+    /*
+     * Retourne les produits présenté lors d'une visite
+     * 
+     * @param int numéro Rapport
+     */
+    public function getProduitsPresentes($num) {
+        $req = "SELECT P.MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, OFF_QTE FROM presenter p, medicament m
+                WHERE p.MED_DEPOTLEGAL = m.MED_DEPOTLEGAL
+                AND RAP_NUM = ". $num;
+        
+        return PdoGsb::$monPdo->query($req)->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    /*
+     * Retourne les comptes rendus de visiteurs d'une region qui ont déjà rédigé au moins un comptes rendus
+     */
+    public function getVisiteursDeRegion($region) {
+        $req = 'SELECT * FROM visiteur v, travailler t
+                    WHERE v.VIS_MATRICULE = t.VIS_MATRICULE
+                    AND REG_CODE = ' . $region . '
+                    AND v.VIS_MATRICULE IN ( 
+                        SELECT DISTINCT VIS_MATRICULE 
+                        FROM rapport_visite 
+                        WHERE JJMMAA = (
+                            SELECT MAX(JJMMAA)
+                            FROM travailler
+                            WHERE VIS_MATRICULE = v.VIS_MATRICULE))';
+        
+        return PdoGsb::$monPdo->query($req)->fetchAll(PDO::FETCH_ASSOC);
     }
     
     /*
