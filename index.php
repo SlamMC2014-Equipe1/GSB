@@ -8,7 +8,13 @@ require_once("class/user.class.php");
 
 $pdo = PdoGsb::getPdoGsb();
 
-$uc = isset($_REQUEST['uc']) ? $_REQUEST['uc'] : 'accueil';
+//$uc = isset($_REQUEST['uc']) ? $_REQUEST['uc'] : 'gererCR';
+if (!isset($_REQUEST['uc'])) {
+    $uc = 'gererCR';
+    $_REQUEST['action'] = 'saisieCR';
+} else {
+    $uc = $_REQUEST['uc'];
+}
 
 if(!isset($_SESSION['user'])) {
     $uc = 'connexion';
@@ -21,10 +27,6 @@ else {
 include("vues/v_entete.php");
 
 switch($uc){
-    case 'accueil' :
-        include("vues/v_accueil.php");
-        break;
-    
     case 'connexion':
         include("controleurs/c_connexion.php");
         break;

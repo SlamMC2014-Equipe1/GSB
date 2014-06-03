@@ -42,7 +42,7 @@ switch($action){
                     //$_SESSION['vis_matricule']= $id;
                     //$_SESSION['nom']= $nom;
                     //$_SESSION['prenom']= $prenom;
-                    header('Location: index.php?uc=accueil');
+                    header('Location: index.php');
 		}
 		break;
 	}
